@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Musselman Web Design is a Web Design Startup in Victoria Texas. This is the portfolio of James Musselman">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+</head>
+
+
+<body>
+<!-- Navigation -->
+<nav class="w3-bar w3-black w3-top">
+    <a href="https://www.jmusselman.dev" class="w3-bar-item w3-button">Home</a>
+    <a href="https://portfolio.jmusselman.dev" class="w3-bar-item w3-button w3-hide-small">Portfolio</a>
+    <a href="https://blog.jmusselman.dev" class="w3-bar-item w3-button w3-hide-small">Blog</a>
+    <a href="https://www.jmusselman.dev/contact-us" class="w3-br-item w3-button w3-hide-small">Contact Us</a>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+        onclick="myFunction()">&#9776;</a>
+</nav>
+<nav id="demo" class="w3-bar-block w3-dark-blue w3-hide w3-hide-large w3-hide-medium">
+    <a href="https://portfolio.jmusselman.dev" class="w3-bar-item w3-button">Portfolio</a>
+    <a href="https://blog.jmusselman.dev" class="w3-bar-item w3-button">Blog</a>
+    <a href="https://www.jmusselman.dev/contact-us" class="w3-bar-item w3-button">Contact Us</a>
+</nav>
+<!--Logo?-->
+<div class="w3-display-container w3-blue">
+    <img src="media/img/slash.png" style="width:100%">
+    <div class="w3-padding w3-display-middle w3-white w3-round-large" style="font-size: 3vw;">
+        <p class="w3-text-blue w3-allerta" style=" text-shadow:1px 1px 0 #444">
+            <b>Musselman Web Design</b></p>
+            <hr class="w3-black">
+            <div class="w3-center w3-allerta w3-padding w3-blue w3-round-large">Coming soon
+                <div class="w3-padding w3-grey w3-round-large">
+                    <p id="countdown" style="font-size: 75%;"></p>
+                </div>
+            </div>
+            
+    </div>
+</div>
+
+
+
+
+<footer class="w3-container w3-padding w3-bottom w3-center w3-black w3-xlarge">
+    <a href="https://www.facebook.com/Musselman-Web-Design-and-Development-112033993556547/"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://twitter.com/MusselmanWeb"><i class="fa fa-twitter"></i></a>
+</footer>
+<!--Resposnsive Navgation script-->
+<script>
+    function myFunction() {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+</script>
+<!--countdown-->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Nov 25, 2019 12:30:00").getTime();
+
+    // Update the count down every 1 second
+    var countdownfunction = setInterval(function () {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now an the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
